@@ -1,20 +1,31 @@
 package onlyfun.js.controller;
 
-import java.util.HashMap;
-import java.util.Map;
+import onlyfun.js.model.User;
+import onlyfun.js.service.UserService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HelloController {
-	@RequestMapping("/greeting")
-	public ModelAndView greeting(@RequestParam(value="name", defaultValue = "World")String name) {
-		System.out.println("Hello " + name);
-		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("username", name);
-		return new ModelAndView("/hello", map);
-	}
+//	private UserService userService;
+//	
+//	@RequestMapping("/greeting")
+//	public String greeting(@RequestParam(value="name", defaultValue = "World")String name, Model model) {
+//		User user = userService.selectLoginUser("admin", "admin");
+//		model.addAttribute(user);
+//		return "hello";
+//	}
+//
+//	public UserService getUserService() {
+//		return userService;
+//	}
+//
+//	@Autowired
+//	public void setUserService(UserService userService) {
+//		this.userService = userService;
+//	}
 }

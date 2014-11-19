@@ -1,17 +1,23 @@
 package onlyfun.js.dao;
 
+import java.util.Map;
+
 import onlyfun.js.model.User;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(Long id);
+	int deleteByPrimaryKey(Long id);
 
-    int insert(User record);
+	int insert(User record);
 
-    int insertSelective(User record);
+	int insertSelective(User record);
 
-    User selectByPrimaryKey(Long id);
+	User selectByPrimaryKey(Long id);
 
-    int updateByPrimaryKeySelective(User record);
+	User selectByUserId(String userId);
 
-    int updateByPrimaryKey(User record);
+	User selectLoginUser(Map<String, String> map);
+
+	int updateByPrimaryKeySelective(User record);
+
+	int updateByPrimaryKey(User record);
 }

@@ -8,6 +8,6 @@
 <title>Hello</title>
 </head>
 <body>
-	你好，${username }
+	你好，${user.userId }
 </body>
 </html>
