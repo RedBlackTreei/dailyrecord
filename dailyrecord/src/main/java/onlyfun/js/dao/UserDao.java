@@ -7,7 +7,7 @@ import onlyfun.js.model.User;
 public interface UserDao {
 	int deleteByPrimaryKey(Long id);
 
-	int insert(User record);
+	int insert(User record); 
 
 	int insertSelective(User record);
 
