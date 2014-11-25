@@ -21,7 +21,7 @@ public class UserController {
 		User user = userService.selectByUserId(userId);
 		if(user == null) {
 			user = new User();
-			user.setName("未知用户");
+			user.setName("未知用户。");
 		}
 		request.setAttribute("user", user);
 		return "index";
