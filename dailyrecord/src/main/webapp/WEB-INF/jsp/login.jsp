@@ -4,19 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页</title>
-<style type="text/css">
-.name {
-	color: #ff0000;
-	font-family: Microsoft YaHei
-}
-</style>
+<title>登录</title>
+</head>
 <%
 	String contextPath = request.getContextPath();
 %>
-</head>
 <body>
-	欢迎
-	<span class="name">${user.name}</span>
+	<form action="/dailyrecord/user/login" method="post">
+		<fieldset>
+			<label>用户名：</label> <input type="text" name="userId"></input><br>
+			<label>密 码：</label><input type="password" name="password"></input>
+			<input type="submit" value="登录"></input>
+		</fieldset>
+	</form>
 </body>
 </html>

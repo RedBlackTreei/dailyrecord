@@ -15,6 +15,11 @@
 		ID, NAME, USER_ID, PASSWORD, EMAIL, CREATETIME, UPDATETIME,
 		MODIFIER
 	</sql>
+	<select id="selectAllUser" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from dr_user
+	</select>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Long">
 		select
@@ -44,11 +49,12 @@
 	</delete>
 	<insert id="insert" parameterType="onlyfun.js.model.User">
 		insert into dr_user (ID,
+		NAME,
 		USER_ID, PASSWORD,
 		EMAIL, CREATETIME, UPDATETIME,
 		MODIFIER)
 		values
-		(#{id,jdbcType=BIGINT}, #{userId,jdbcType=VARCHAR},
+		(#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR},
 		#{password,jdbcType=VARCHAR},
 		#{email,jdbcType=VARCHAR},
 		#{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP},
