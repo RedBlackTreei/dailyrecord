@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+@RequestMapping("/")
 public class HomeController {
 	@Autowired
 	private UserService userService;
@@ -22,7 +23,7 @@ public class HomeController {
 		return "index";
 	}
 	
-	@RequestMapping(value = {"/greeting/{userId}", "/greeting"})
+	@RequestMapping("/greeting/{userId}")
 	public String index(@PathVariable String userId, HttpServletRequest request) {
 		User user = userService.selectByUserId(userId);
 		if (user == null) {

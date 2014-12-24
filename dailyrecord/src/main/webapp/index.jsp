@@ -12,8 +12,8 @@
 }
 </style>
 <%
-	String contextPath = request.getContextPath();
-	response.sendRedirect(contextPath + "/user/login");
+	//String contextPath = request.getContextPath();
+	///response.sendRedirect(contextPath + "/user/login");
 %>
 </head>
 <body>
