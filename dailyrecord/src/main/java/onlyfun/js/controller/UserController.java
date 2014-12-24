@@ -2,8 +2,6 @@ package onlyfun.js.controller;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import onlyfun.js.model.User;
 import onlyfun.js.service.UserService;
 
@@ -14,7 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -23,17 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
 	Logger logger = Logger.getLogger(UserController.class);
 	private UserService userService;
-
-	@RequestMapping("/greeting/{userId}")
-	public String index(@PathVariable String userId, HttpServletRequest request) {
-		User user = userService.selectByUserId(userId);
-		if (user == null) {
-			user = new User();
-			user.setName("未知用户。");
-		}
-		request.setAttribute("user", user);
-		return "index";
-	}
 
 	@RequestMapping(value = "/login", method=RequestMethod.GET)
 	public String login(@ModelAttribute("user") User user) {

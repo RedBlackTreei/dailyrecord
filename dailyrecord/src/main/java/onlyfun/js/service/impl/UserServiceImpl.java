@@ -8,6 +8,7 @@ import java.util.Map;
 import onlyfun.js.dao.UserDao;
 import onlyfun.js.model.User;
 import onlyfun.js.service.UserService;
+import onlyfun.js.utils.UUID;
 
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public User selectByUserId(String userId) {
+		if(userId == null) {
+			return null;
+		}
 		return userDao.selectByUserId(userId);
 	}
 
@@ -44,6 +48,9 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	public void addUser(User user) {
+		if(user.getId() == null) {
+			user.setId(UUID.getUUID());
+		}
 		userDao.insert(user);
 	}
 }
