@@ -33,6 +33,9 @@ public class UserController {
 		}
 		user = userService.selectLoginUser(user.getUserId(), user.getPassword());
 		model.addAttribute("user", user);
+		if(user.getUserId().equals("admin")) {
+			return "admin/index";
+		}
 		return "index";
 	}
 	

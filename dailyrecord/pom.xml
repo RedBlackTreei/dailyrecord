@@ -10,6 +10,8 @@
 	<properties>
 		<!-- spring版本号 -->
 		<spring.version>3.2.4.RELEASE</spring.version>
+		<!-- spring security -->
+		<spring.security.version>3.2.5.RELEASE</spring.security.version>
 		<!-- mybatis版本号 -->
 		<mybatis.version>3.2.4</mybatis.version>
 		<!-- log4j日志文件管理包版本 -->
@@ -18,7 +20,6 @@
 	</properties>
 	<dependencies>
 		<!-- spring核心包 -->
-		<!-- springframe start -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -78,7 +79,19 @@
 			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-		<!-- springframe end -->
+		
+		<!-- spring security包 -->
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
 
 		<!-- mybatis核心包 -->
 		<dependency>
@@ -120,13 +133,13 @@
 		</dependency>
 
 		<!-- 日志文件管理包 -->
-		<!-- log start -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>${log4j.version}</version>
 		</dependency>
-		<!-- log end -->
+		
+		<!-- apache 工具类 -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
@@ -137,11 +150,15 @@
 			<artifactId>commons-collections4</artifactId>
 			<version>4.0</version>
 		</dependency>
+		
+		<!-- JSTL -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
+		
+		<!-- Oracle包 -->
 		<dependency>
 			<groupId>com.orale</groupId>
 			<artifactId>ojdbc14</artifactId>
